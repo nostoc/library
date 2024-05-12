@@ -45,6 +45,7 @@ function displayBooks() {
             displayBooks(); // Update display after removing the book
         });
 
+        
         // Button to toggle read status
         const toggleReadButton = document.createElement('button');
         toggleReadButton.textContent = 'Toggle Read Status';
@@ -64,6 +65,16 @@ function displayBooks() {
         // Append bookDiv to container
         bookContainer.appendChild(bookDiv);
     });
+}
+
+function removeBook(index) {
+    // Remove the book at the specified index from the library array
+    myLibrary.splice(index, 1);
+}
+
+function toggleReadStatus(index) {
+    // Toggle the read status of the book at the specified index
+    myLibrary[index].read = !myLibrary[index].read;
 }
 
 const newBookBtn = document.getElementById('new-book-btn');
